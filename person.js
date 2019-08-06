@@ -44,11 +44,14 @@ class Student extends Person {
   }
 
   getBio() {
-    if (this.grade > 70) {
-      return `${this.firstName} is passing with a grade of ${this.grade}`;
-    } else {
-      return `${this.firstName} is failing with a grade of ${this.grade}`;
-    }
+    return this.grade > 70
+      ? `${this.firstName} is passing with a grade of ${this.grade}`
+      : `${this.firstName} is failing with a grade of ${this.grade}`;
+    // if (this.grade > 70) {
+    //   return `${this.firstName} is passing with a grade of ${this.grade}`;
+    // } else {
+    //   return `${this.firstName} is failing with a grade of ${this.grade}`;
+    // }
   }
 
   updateGrade(grade) {
