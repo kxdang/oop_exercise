@@ -52,10 +52,16 @@ class Student extends Person {
   }
 
   updateGrade(grade) {
-    return this.grade - grade;
+    return (this.grade += grade);
   }
 }
 
 const boy = new Student("Barnacle", "Boy", 21, 76, ["Nothing"]);
 
-console.log(boy);
+console.log(boy.getBio());
+
+boy.updateGrade(-30);
+
+console.log(boy.grade);
+
+console.log(boy.getBio());
