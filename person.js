@@ -37,11 +37,25 @@ class Employee extends Person {
   }
 }
 
-const me = new Employee("Kien", "Dang", 25, "Janitor", ["Health", "Money"]);
+class Student extends Person {
+  constructor(firstName, lastName, age, grade, likes) {
+    super(firstName, lastName, age, likes);
+    this.grade = grade;
+  }
 
-me.setName("Alexis Turner");
-console.log(me.getBio());
+  getBio() {
+    if (this.grade > 70) {
+      return `${this.firstName} is passing with a grade of ${this.grade}`;
+    } else {
+      return `${this.firstName} is failing with a grade of ${this.grade}`;
+    }
+  }
 
-const person2 = new Person("Clancey", "Turner", 51);
+  updateGrade(grade) {
+    return this.grade - grade;
+  }
+}
 
-console.log(person2.getBio());
+const boy = new Student("Barnacle", "Boy", 21, 76, ["Nothing"]);
+
+console.log(boy);
